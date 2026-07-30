@@ -103,23 +103,6 @@
 
 Модель була донавчена (**fine-tuning**) на датасеті IMDb Movie Reviews.
 
-### Інструменти
-
-Основні бібліотеки:
-
-- Python;
-- pandas;
-- NumPy;
-- scikit-learn;
-- XGBoost;
-- NLTK;
-- PyTorch;
-- Hugging Face Transformers;
-- Hugging Face Datasets;
-- matplotlib;
-- plotly.
-
----
 
 ## 6. Результати
 
@@ -130,4 +113,84 @@
 | Logistic Regression (Baseline) | max_iter=1000 | 0.9295 | 0.8979 | - | 1 s |
 | Decision Tree | max_depth=10, min_samples_leaf=5 | 0.7850 | 0.7675 | - | 9 s |
 | XGBoost | n_estimators=1000, learning_rate=0.05, max_depth=6 | 0.9622 | 0.8759 | - | 17 min |
-| Linea
+| Linear SVM | C=0.1, class_weight=balanced | 0.9337 | 0.8994 | - | 23 s |
+| Logistic Regression + TF-IDF tuning | C=2, class_weight=balanced, tuned TF-IDF | 0.9481 | 0.9019 | 0.8969 | 23 s |
+| DistilBERT | Transformer fine-tuning | 0.9733 | 0.9124 | 0.9066 | 18 min |
+
+---
+
+## 7. Висновки
+
+У результаті експериментів було проведено порівняння класичних моделей машинного навчання та Transformer-підходу для задачі sentiment analysis.
+
+Серед класичних моделей найкращий результат показала **Logistic Regression з оптимізованими параметрами TF-IDF**, яка досягла:
+
+- Validation F1-score: **0.9019**
+- Test F1-score: **0.8969**
+
+Найкращу якість класифікації продемонструвала модель **DistilBERT**:
+
+- Validation F1-score: **0.9124**
+- Test F1-score: **0.9066**
+
+Перевага DistilBERT пояснюється здатністю Transformer-моделей враховувати контекст слів та складні залежності у тексті.
+
+Водночас TF-IDF + Logistic Regression залишається ефективним рішенням, яке забезпечує високу якість при значно меншому часі навчання.
+
+Видалення дублікатів з датасету дозволило уникнути data leakage та отримати більш реалістичну оцінку якості моделей.
+
+---
+
+## 8. Як запустити проєкт (Installation & Usage)
+
+Клонувати репозиторій:
+
+```bash
+git clone <repository_url>
+cd IMDb-Sentiment-Classification
+```
+
+Встановити залежності:
+
+```bash
+pip install -r requirements.txt
+```
+
+Для відтворення експериментів необхідно запускати Jupyter Notebook у наступному порядку:
+
+```
+notebooks/
+
+├── 01_eda.ipynb
+├── 02_baseline.ipynb
+└── 03_models.ipynb
+```
+
+Збережені моделі та інші артефакти знаходяться у директорії:
+
+```
+models/
+```
+
+---
+
+## 9. Вимоги (requirements.txt)
+
+Усі необхідні залежності для запуску проєкту наведені у файлі:
+
+```
+requirements.txt
+```
+
+Основні бібліотеки:
+
+- pandas;
+- numpy;
+- scikit-learn;
+- xgboost;
+- nltk;
+- pytorch;
+- transformers;
+- datasets.
+
+---
