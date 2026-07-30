@@ -1,0 +1,7 @@
+Model,Key hyperparameters,Train F1-score,Validation F1-score,Test F1-score,Training time
+Logistic Regression (Baseline),max_iter=1000,0.9295,0.8979,-,1 с
+Decision Tree,"max_depth=10, min_samples_leaf=5",0.785,0.7675,-,9 с
+XGBoost,"n_estimators=1000, learning_rate=0.05, max_depth=6",0.9622,0.8759,-,17 хв
+Linear SVM,"C=0.1, class_weight=balanced",0.9337,0.8994,-,23 с
+Logistic Regression + TF-IDF tuning,"LR: C=2, class_weight=balanced; TF-IDF: max_features=20000, min_df=3",0.9481,0.9019,0.8969,23 с
+DistilBERT,-,0.9732978059980724,0.9124230920277524,0.9066284672483396,18 хв
