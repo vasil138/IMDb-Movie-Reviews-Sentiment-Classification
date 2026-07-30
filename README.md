@@ -167,6 +167,26 @@ cd IMDb-Sentiment-Classification
 ```bash
 pip install -r requirements.txt
 ```
+### Дані
+
+Через обмеження на розмір файлів датасети не включено до репозиторію.
+
+Для відтворення результатів необхідно:
+
+1. Завантажити датасет IMDb Movie Reviews за посиланням: https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews
+2. Помістити файл `IMDB Dataset.csv.zip` у папку `data/`.
+3. Запустити ноутбуки у наведеному порядку.
+
+### Модель DistilBERT
+
+Через обмеження на розмір файлів навчена модель **DistilBERT** (понад 250 МБ) не включена до репозиторію.
+
+Для її використання можна:
+
+- відтворити навчання, виконавши відповідний Jupyter Notebook;
+- або завантажити готову модель за посиланням на Google Drive:
+
+**Google Drive:**: https://drive.google.com/drive/folders/1SR9u7T82tNjq8gqPFHdaHJYGDuAc4nJz?usp=drive_link
 
 Для відтворення експериментів необхідно запускати Jupyter Notebook у наступному порядку:
 
