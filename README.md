@@ -162,8 +162,7 @@ pip install -r requirements.txt
 notebooks/
 
 ├── 01_eda.ipynb
-├── 02_baseline.ipynb
-└── 03_models.ipynb
+└── 02_models.ipynb
 ```
 
 Збережені моделі та інші артефакти знаходяться у директорії:
